@@ -12,8 +12,8 @@ class DynamicLinkService {
   // Create new dynamic link
   Future<void> createDynamicLink() async {
     final dynamicLinkParams = DynamicLinkParameters(
-      link: Uri.parse("https://flutterdeepdemo.page.link.com/start"),
-      uriPrefix: "https://flutterdeepdemo.page.link",
+      link: Uri.parse("https://xpart.top/start"),
+      uriPrefix: "https://xpart.top",
       androidParameters:
           const AndroidParameters(packageName: "com.example.flutter_deep_linking"),
     );
