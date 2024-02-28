@@ -40,7 +40,7 @@ dependencies:
   go_router: ^13.2.0
   firebase_dynamic_links: ^5.4.14
   app_links: ^3.5.0
-
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

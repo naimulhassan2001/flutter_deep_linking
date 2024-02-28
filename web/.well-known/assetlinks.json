@@ -1,0 +1,14 @@
+[
+    {
+        "relation":[
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target" :{
+            "namespace": "flutter_deep_linking",
+            "package_name": "com.example.flutter_deep_linking",
+            "sha256_cert_fingerprints" : [
+                "7E:85:F5:16:0D:1C:CF:27:13:AF:FF:1D:39:1A:EB:E7:39:15:46:DB:A5:08:55:12:34:C2:D3:A9:61:02:78:F3"
+            ]
+        }
+    }
+]
