@@ -1,5 +1,7 @@
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_deep_linking/core/app_route.dart';
+import 'package:get/get.dart';
 
 /// [DynamicLinkService]
 class DynamicLinkService {
@@ -12,14 +14,34 @@ class DynamicLinkService {
   // Create new dynamic link
   Future<void> createDynamicLink() async {
     final dynamicLinkParams = DynamicLinkParameters(
-      link: Uri.parse("https://flutterdeepdemo.page.link.com/?code=red"),
+      link: Uri.parse("https://xpart.top?screen=test"),
       uriPrefix: "https://flutterdeepdemo.page.link",
-      androidParameters:
-          const AndroidParameters(packageName: "com.example.flutter_deep_linking"),
+      androidParameters: const AndroidParameters(
+          packageName: "com.example.flutter_deep_linking"),
     );
     final dynamicLink =
         await FirebaseDynamicLinks.instance.buildShortLink(dynamicLinkParams);
 
     debugPrint("shortUrl ===========================> ${dynamicLink.shortUrl}");
+  }
+
+  Future<void> initDynamicLinks() async {
+    FirebaseDynamicLinks.instance.onLink.listen((dynamicLinkData) {
+      // Navigator.pushNamed(context, dynamicLinkData.link.path);
+
+      Map<String, String> param = dynamicLinkData.link.queryParameters;
+
+      String receivedCode = param['screen'] ?? " ";
+
+      if (receivedCode == "green") {
+        Get.toNamed(AppRoute.test);
+      }
+
+      print(
+          "=========================================>receivedCode ${receivedCode}");
+    }).onError((error) {
+      print('onLink error');
+      print(error.message);
+    });
   }
 }

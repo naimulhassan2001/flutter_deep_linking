@@ -1,3 +1,5 @@
+import 'package:flutter_deep_linking/core/app_route.dart';
+import 'package:get/get.dart';
 import 'package:uni_links/uni_links.dart';
 
 class UniLinksService {
@@ -33,6 +35,13 @@ class UniLinksService {
     String receivedCode = param['code'] ?? " " ;
 
           print("==============================>receivedCode $receivedCode") ;
+
+
+          if(receivedCode == "green") {
+            Get.toNamed(AppRoute.test) ;
+          } else {
+            Get.toNamed(AppRoute.home) ;
+          }
 
 
   }
