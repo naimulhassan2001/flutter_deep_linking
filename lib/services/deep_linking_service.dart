@@ -41,6 +41,7 @@ class DynamicLinkService {
 
       if (receivedCode == "details") {
         Get.toNamed(AppRoute.home);
+
       }
 
       print(
